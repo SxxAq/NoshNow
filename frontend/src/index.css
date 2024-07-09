@@ -4,10 +4,11 @@
  padding: 0;
  box-sizing: border-box; 
  font-family: "Montserrat", sans-serif;
+
 } 
 body {
   min-height: 100vh;
-
+background-color: #F5F7F8;
 }
 a {
   text-decoration: none;
@@ -16,4 +17,13 @@ a {
 .app{
   width: 80%;
   margin: auto;
+}
+@keyframes FadeIn {
+  0%{
+    opacity: 0%;
+  }
+  100%{
+    opacity: 100%;
+  }
+  
 }
