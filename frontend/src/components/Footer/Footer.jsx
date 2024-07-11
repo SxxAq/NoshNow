@@ -12,11 +12,6 @@ const Footer = () => {
             more – we bring restaurant-quality flavors to your doorstep. Enjoy
             easy online ordering and elevate your dining experience.
           </p>
-          <div className="footer-social-icons">
-            <img src={assets.facebook_icon} alt="" />
-            <img src={assets.twitter_icon} alt="" />
-            <img src={assets.linkedin_icon} alt="" />
-          </div>
         </div>
         <div className="footer-content-center">
           <h2>COMPANY</h2>
@@ -33,6 +28,11 @@ const Footer = () => {
             <li>+1-212-345-8970</li>
             <li>contact@noshnow.com</li>
           </ul>
+          <div className="footer-social-icons">
+            <img src={assets.facebook_icon} alt="" />
+            <img src={assets.twitter_icon} alt="" />
+            <img src={assets.linkedin_icon} alt="" />
+          </div>
         </div>
       </div>
       <hr />
