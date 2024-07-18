@@ -13,9 +13,24 @@ const List = () => {
       toast.error("Error loading list.");
     }
   };
+  const itemRemoveHandler = async (foodId) => {
+    try {
+      const response = await axios.post(`${url}/api/food/remove`, {
+        id: foodId,
+      });
+      if (response.data.success) {
+        toast.success("Item removed.");
+      } else {
+        toast.error("Error removing food.");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Error removing food.");
+    }
+  };
   useEffect(() => {
     fetchList();
-  }, []);
+  }, [itemRemoveHandler]);
   return (
     <div className="list add flex-col">
       <p>All Foods List</p>
@@ -34,7 +49,9 @@ const List = () => {
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>${item.price}</p>
-              <p className="cross">X</p>
+              <p onClick={() => itemRemoveHandler(item._id)} className="cross">
+                X
+              </p>
             </div>
           );
         })}
