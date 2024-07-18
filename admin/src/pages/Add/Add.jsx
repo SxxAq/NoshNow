@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { assets } from "../../assets/assets";
 import axios from "axios";
+import { toast } from "react-toastify";
 import "./Add.css";
 const Add = () => {
   const url = "http://localhost:4000";
@@ -34,7 +35,9 @@ const Add = () => {
         category: "Salad",
       });
       setImage(false);
+      toast.success(response.data.message);
     } else {
+      toast.error(response.data.message)
     }
   };
   // useEffect(() => {
@@ -42,7 +45,7 @@ const Add = () => {
   // }, [data]);
   return (
     <div className="add">
-      <form  onSubmit={onSubmitHandler} className="flex-col">
+      <form onSubmit={onSubmitHandler} className="flex-col">
         <div className="add-image-upload flex-col">
           <p>Upload Image</p>
           <label htmlFor="image">
