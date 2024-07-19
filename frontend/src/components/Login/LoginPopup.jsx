@@ -3,6 +3,12 @@ import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
 const LoginPopup = ({ setShowLogin }) => {
   const [currState, setCurrState] = useState("Sign Up");
+  const url="http://localhost:4000"
+  const [data,setData]=useState({
+    name:"",
+    email:"",
+    password:"",
+  })
   return (
     <div className="login-popup">
       <form className="login-popup-container">

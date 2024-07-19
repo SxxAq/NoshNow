@@ -18,8 +18,10 @@ const List = () => {
       const response = await axios.post(`${url}/api/food/remove`, {
         id: foodId,
       });
+
       if (response.data.success) {
-        toast.success("Item removed.");
+        await fetchList();
+        toast.success(response.data.message);
       } else {
         toast.error("Error removing food.");
       }
@@ -30,7 +32,7 @@ const List = () => {
   };
   useEffect(() => {
     fetchList();
-  }, [itemRemoveHandler]);
+  }, []);
   return (
     <div className="list add flex-col">
       <p>All Foods List</p>
