@@ -1,7 +1,8 @@
 import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 import Stripe from "stripe";
-
+import dotenv from "dotenv";
+dotenv.config();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Placing user order Frontend
@@ -36,6 +37,7 @@ const placeOrder = async (req, res) => {
         },
         unit_amount: 2 * 100 * 80,
       },
+      quantity: 1,
     });
     const session = await stripe.checkout.sessions.create({
       line_items: line_items,
