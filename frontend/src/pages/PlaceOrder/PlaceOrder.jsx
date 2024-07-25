@@ -1,10 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 
 const PlaceOrder = () => {
-  const { getTotalCartAmount, token, cartItems, food_list, url } = useContext(StoreContext);
+  const { getTotalCartAmount, token, cartItems, food_list, url } =
+    useContext(StoreContext);
 
   const [data, setData] = useState({
     firstName: "",
@@ -26,12 +28,14 @@ const PlaceOrder = () => {
 
   const placeOrder = async (event) => {
     event.preventDefault();
-    
-    let orderItems = food_list.filter(item => cartItems[item._id] > 0).map(item => ({
-      ...item,
-      quantity: cartItems[item._id]
-    }));
-    
+
+    let orderItems = food_list
+      .filter((item) => cartItems[item._id] > 0)
+      .map((item) => ({
+        ...item,
+        quantity: cartItems[item._id],
+      }));
+
     let orderData = {
       address: data,
       items: orderItems,
@@ -54,6 +58,14 @@ const PlaceOrder = () => {
       alert("Error placing order, please try again later.");
     }
   };
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!token) {
+      navigate("/cart");
+    } else if (getTotalCartAmount() === 0) {
+      navigate("/cart");
+    }
+  }, [token]);
 
   return (
     <form onSubmit={placeOrder} className="place-order">
