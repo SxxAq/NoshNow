@@ -1,11 +1,12 @@
 import "./Footer.css";
 import { assets } from "../../assets/assets";
+
 const Footer = () => {
   return (
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img className="logo" src={assets.logo1} alt="" />
+          <img className="logo" src={assets.logo_2} alt="NoshNow Logo" />
           <p>
             Discover NoshNow, your go-to for delicious meals delivered straight
             to you. From fresh salads to savory rolls, indulgent desserts, and
@@ -29,9 +30,9 @@ const Footer = () => {
             <li>contact@noshnow.com</li>
           </ul>
           <div className="footer-social-icons">
-            <img src={assets.facebook_icon} alt="" />
-            <img src={assets.twitter_icon} alt="" />
-            <img src={assets.linkedin_icon} alt="" />
+            <img src={assets.facebook_icon} alt="Facebook" />
+            <img src={assets.twitter_icon} alt="Twitter" />
+            <img src={assets.linkedin_icon} alt="LinkedIn" />
           </div>
         </div>
       </div>

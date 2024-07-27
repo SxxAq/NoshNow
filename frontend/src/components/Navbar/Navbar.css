@@ -3,29 +3,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f8f9fa; /* Light background for better contrast */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #f8f9fa; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
   border-radius: 15px;
-  
+  position: relative;
+  z-index: 1000;
 }
 
 .navbar .logo {
-  margin-top: 5px;
   width: 100px;
-  
+  margin-top: 5px;
 }
 
 .navbar-menu {
   display: flex;
   list-style: none;
-  gap: 30px; /* Increased gap for better spacing */
+  gap: 30px; 
   color: #49557e;
   font-size: 18px;
 }
 
+.navbar-menu ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navbar-menu.open ul {
+  flex-direction: column;
+}
+
 .navbar-menu li {
   cursor: pointer;
-  transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for color and border */
+  transition: color 0.3s ease, border-bottom 0.3s ease; 
 }
 
 .navbar-menu li:hover,
@@ -41,9 +51,9 @@
 }
 
 .navbar-right img {
-  width: 25px; /* Ensure icons are uniformly sized */
+  width: 25px; 
   cursor: pointer;
-  transition: transform 0.3s ease; /* Add hover effect to icons */
+  transition: transform 0.3s ease; 
 }
 
 .navbar-right img:hover {
@@ -77,7 +87,7 @@
   border-radius: 50%;
   top: -5px;
   right: -5px;
-  border: 2px solid #f8f9fa; /* Border to match the navbar background */
+  border: 2px solid #f8f9fa;
 }
 
 .navbar-profile {
@@ -89,7 +99,6 @@
   position: absolute;
   display: none;
   right: 0;
-  z-index: 1;
   background-color: #fff;
   padding: 12px 20px;
   border-radius: 5px;
@@ -98,6 +107,7 @@
   transition: opacity 0.3s ease, visibility 0.3s ease;
   opacity: 0;
   visibility: hidden;
+  z-index: 3;
 }
 
 .navbar-profile:hover .nav-profile-dropdown {
@@ -123,4 +133,62 @@
 
 .nav-profile-dropdown img {
   width: 20px;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-menu.open {
+    display: flex;
+    position: absolute;
+    top: 60px; 
+    left: 0;
+    right: 0;
+    background-color: #f8f9fa;
+    padding: 20px;
+    /* border-radius: 15px; */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-menu.open ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .navbar-right {
+    gap: 10px;
+  }
+
+  .navbar-profile {
+    order: 2;
+  }
+
+  .navbar .cart {
+    order: 1;
+  }
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #49557e;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
 }

@@ -6,6 +6,7 @@
     position: relative;
     border-radius: 15px;
     overflow: hidden; 
+  
   }
   
   /* Adding an overlay for better text contrast */
@@ -59,3 +60,28 @@
     border: 2px solid #F7F9F2;
   }
   
+  @media (max-width: 900px) {
+    .header {
+        height: 50vw; /* Adjust height for smaller screens */
+    }
+
+    .header-contents {
+        max-width: 70%; /* Adjust max width */
+        bottom: 15%; /* Adjust position */
+        left: 5vw;
+        gap: 2vw;
+    }
+
+    .header-contents h2 {
+        font-size: max(6vw, 20px); /* Adjust font size */
+    }
+
+    .header-contents p {
+        font-size: 2vw; /* Adjust font size */
+    }
+
+    .header-contents button {
+        padding: 1.5vw 3vw; /* Adjust padding */
+        font-size: max(2vw, 12px); /* Adjust font size */
+    }
+}

@@ -7,6 +7,7 @@ import { StoreContext } from "../../context/StoreContext";
 const Navbar = ({ setShowLogin }) => {
   const navigate = useNavigate();
   const [menu, setMenu] = useState("home");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
 
   const onLogout = () => {
@@ -15,46 +16,51 @@ const Navbar = ({ setShowLogin }) => {
     navigate("/");
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="navbar">
       <Link to="/">
         <img src={assets.logo_2} alt="logo" className="logo" />
       </Link>
-      <ul className="navbar-menu">
-        <Link to="/">
-          <li
-            onClick={() => setMenu("home")}
-            className={menu === "home" ? "active" : ""}
-          >
-            Home
-          </li>
-        </Link>
-        <a href="#explore-menu">
-          <li
-            onClick={() => setMenu("menu")}
-            className={menu === "menu" ? "active" : ""}
-          >
-            Menu
-          </li>
-        </a>
-        <a href="#app-download">
-          <li
-            onClick={() => setMenu("mobile-app")}
-            className={menu === "mobile-app" ? "active" : ""}
-          >
-            Mobile App
-          </li>
-        </a>
-        <a href="#footer">
-          {" "}
-          <li
-            onClick={() => setMenu("contact")}
-            className={menu === "contact" ? "active" : ""}
-          >
-            Contact Us
-          </li>
-        </a>
-      </ul>
+      <div className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
+        <ul>
+          <Link to="/">
+            <li
+              onClick={() => setMenu("home")}
+              className={menu === "home" ? "active" : ""}
+            >
+              Home
+            </li>
+          </Link>
+          <a href="#explore-menu">
+            <li
+              onClick={() => setMenu("menu")}
+              className={menu === "menu" ? "active" : ""}
+            >
+              Menu
+            </li>
+          </a>
+          <a href="#app-download">
+            <li
+              onClick={() => setMenu("mobile-app")}
+              className={menu === "mobile-app" ? "active" : ""}
+            >
+              Mobile App
+            </li>
+          </a>
+          <a href="#footer">
+            <li
+              onClick={() => setMenu("contact")}
+              className={menu === "contact" ? "active" : ""}
+            >
+              Contact Us
+            </li>
+          </a>
+        </ul>
+      </div>
       <div className="navbar-right">
         <img src={assets.search_icon} alt="Search" />
         <div className="navbar-search-icon">
@@ -81,6 +87,11 @@ const Navbar = ({ setShowLogin }) => {
             </ul>
           </div>
         )}
+      </div>
+      <div className="hamburger" onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   );
