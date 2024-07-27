@@ -1,89 +1,126 @@
 .navbar {
-  padding: 20px 0px;
+  padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #f8f9fa; /* Light background for better contrast */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 15px;
+  
 }
+
 .navbar .logo {
-  width: 150px;
+  margin-top: 5px;
+  width: 100px;
+  
 }
+
 .navbar-menu {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 30px; /* Increased gap for better spacing */
   color: #49557e;
   font-size: 18px;
 }
+
+.navbar-menu li {
+  cursor: pointer;
+  transition: color 0.3s ease, border-bottom 0.3s ease; /* Smooth transition for color and border */
+}
+
+.navbar-menu li:hover,
+.navbar-menu .active {
+  color: #04bd62;
+  border-bottom: 2px solid #04bd62;
+}
+
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 30px;
 }
+
+.navbar-right img {
+  width: 25px; /* Ensure icons are uniformly sized */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Add hover effect to icons */
+}
+
+.navbar-right img:hover {
+  transform: scale(1.1);
+}
+
 .navbar button {
-  background: transparent;
+  background: #04bd62;
   font-size: 16px;
-  color: #49557e;
-  /* background-color: #04BD62; */
-  padding: 10px;
-  border: 1px solid #04bd62;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.navbar button:hover {
   color: #fff;
-  background-color: #04bd62;
-}
-.navbar .active {
-  padding-bottom: 2px;
-  border-bottom: 2px solid #04bd62;
-}
-.navbar li {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
+.navbar button:hover {
+  background-color: #039b53;
+}
+
 .navbar-search-icon {
   position: relative;
 }
+
 .navbar-search-icon .dot {
   position: absolute;
   min-width: 10px;
   min-height: 10px;
   background-color: #04bd62;
-  border-radius: 5px;
-  top: -8px;
-  right: -8px;
+  border-radius: 50%;
+  top: -5px;
+  right: -5px;
+  border: 2px solid #f8f9fa; /* Border to match the navbar background */
 }
+
 .navbar-profile {
   position: relative;
+  cursor: pointer;
 }
+
 .nav-profile-dropdown {
   position: absolute;
   display: none;
   right: 0;
   z-index: 1;
+  background-color: #fff;
+  padding: 12px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
 }
+
 .navbar-profile:hover .nav-profile-dropdown {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background-color: #fff;
-  padding: 12px 25px;
-  border-radius: 4px;
-  border: 1px solid tomato;
-  outline: 2px solid #fff;
-  list-style: none;
+  opacity: 1;
+  visibility: visible;
 }
+
 .nav-profile-dropdown li {
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
   font-weight: 400;
+  transition: color 0.3s ease;
 }
+
+.nav-profile-dropdown li:hover {
+  color: #04bd62;
+}
+
 .nav-profile-dropdown img {
   width: 20px;
-}
-.nav-profile-dropdown li:hover {
-  color: tomato;
-
 }
