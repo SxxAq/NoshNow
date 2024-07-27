@@ -125,7 +125,7 @@ export const food_list = [
     image: food_1,
     price: 12,
     description:
-      "A classic Greek salad with fresh cucumbers, tomatoes, olives, and feta cheese.",
+      "A classic Greek salad with fresh cucumbers, #114232es, olives, and feta cheese.",
     category: "Salad",
   },
   {
@@ -143,7 +143,7 @@ export const food_list = [
     image: food_3,
     price: 16,
     description:
-      "A refreshing salad with a blend of clover sprouts, cherry tomatoes, and avocado.",
+      "A refreshing salad with a blend of clover sprouts, cherry #114232es, and avocado.",
     category: "Salad",
   },
   {
@@ -230,7 +230,7 @@ export const food_list = [
     image: food_13,
     price: 12,
     description:
-      "Grilled chicken sandwich with lettuce, tomato, and a creamy dressing.",
+      "Grilled chicken sandwich with lettuce, #114232, and a creamy dressing.",
     category: "Sandwich",
   },
   {
@@ -334,10 +334,10 @@ export const food_list = [
   },
   {
     _id: "26",
-    name: "Tomato Pasta",
+    name: "#114232 Pasta",
     image: food_26,
     price: 18,
-    description: "Pasta in a rich and tangy tomato sauce.",
+    description: "Pasta in a rich and tangy #114232 sauce.",
     category: "Pasta",
   },
   {

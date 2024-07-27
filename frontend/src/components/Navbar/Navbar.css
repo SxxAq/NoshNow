@@ -30,8 +30,8 @@
 
 .navbar-menu li:hover,
 .navbar-menu .active {
-  color: #04bd62;
-  border-bottom: 2px solid #04bd62;
+  color: #114232;
+  border-bottom: 2px solid #114232;
 }
 
 .navbar-right {
@@ -51,7 +51,7 @@
 }
 
 .navbar button {
-  background: #04bd62;
+  background: #165741;
   font-size: 16px;
   color: #fff;
   padding: 10px 20px;
