@@ -1,10 +1,11 @@
+/* Base styles */
 .navbar {
   padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f8f9fa; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   position: relative;
   z-index: 1000;
@@ -18,7 +19,7 @@
 .navbar-menu {
   display: flex;
   list-style: none;
-  gap: 30px; 
+  gap: 30px;
   color: #49557e;
   font-size: 18px;
 }
@@ -35,7 +36,7 @@
 
 .navbar-menu li {
   cursor: pointer;
-  transition: color 0.3s ease, border-bottom 0.3s ease; 
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .navbar-menu li:hover,
@@ -51,9 +52,9 @@
 }
 
 .navbar-right img {
-  width: 25px; 
+  width: 25px;
   cursor: pointer;
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 
 .navbar-right img:hover {
@@ -137,6 +138,13 @@
 
 /* Responsiveness */
 @media (max-width: 900px) {
+  .navbar {
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 0;
+  }
+
   .navbar-menu {
     display: none;
   }
@@ -144,12 +152,12 @@
   .navbar-menu.open {
     display: flex;
     position: absolute;
-    top: 60px; 
+    top: 60px;
     left: 0;
     right: 0;
     background-color: #f8f9fa;
     padding: 20px;
-    /* border-radius: 15px; */
+    margin: 0 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
@@ -164,31 +172,30 @@
 
   .navbar-profile {
     order: 2;
+    
   }
 
   .navbar .cart {
     order: 1;
+    margin-right: 10px;
+
   }
-}
+  .navbar .navbar-search-icon{
+    margin-right: 10px;
+  }
 
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.hamburger span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #49557e;
-  transition: transform 0.3s ease;
-}
-
-@media (max-width: 900px) {
   .hamburger {
     display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #49557e;
+    transition: transform 0.3s ease;
   }
 }
