@@ -10,9 +10,10 @@ const Header = () => {
           NoshNow offers something for everyone. Dive into a culinary adventure
           and discover new flavors and experiences with every order.
         </p>
-        <button>
-          <a href="#explore-menu">View Menu</a>
-        </button>
+
+        <a href="#explore-menu">
+          <button>View Menu</button>
+        </a>
       </div>
     </div>
   );
