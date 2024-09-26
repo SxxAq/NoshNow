@@ -1,6 +1,7 @@
 # NoshNow
 
-![NoshNow Banner](/home/shxdow/Pictures/Screenshots/240727_20h34m23s_screenshot.png)
+![image](https://github.com/user-attachments/assets/470574e4-b4ce-4211-8099-b96c7a09cc96)
+
 
 ## Description
 
