@@ -1,43 +1,104 @@
 .add {
-  width: 70%;
-  margin-left: max(5vw, 25px);
-  margin-top: 50px;
-  color: #6d6d6d;
-  font-size: 16px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
 }
-.add form {
-  gap: 20px;
+
+.add-title {
+  font-size: 2rem;
+  color: #114232;
+  margin-bottom: 1.5rem;
 }
-.add-image-upload img {
-  width: 100px;
+
+.add-form {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
 }
-.add-product-name,
-.add-product-desc {
-  width: max(40%, 280px);
+
+.add-image-upload {
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
-.add-product-name input,
-.add-product-desc input {
-  padding: 10px;
-  border: 1px solid #6d6d6d;
-  border-radius: 4px;
-}
-.add-category-price {
-  display: flex;
-  gap: 30px;
-}
-.add-category-price select,
-.add-category-price input {
-  max-width: 100px;
-  padding: 8px 6px;
-  border: 1px solid;
-  border-radius: 4px;
-}
-.add-btn {
-  max-width: 120px;
-  border: none;
-  padding: 10px;
-  color: #fff;
-  background-color: #114232;
+
+.image-upload-label {
+  display: inline-block;
   cursor: pointer;
-  border-radius: 5px;
+}
+
+.upload-preview {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px dashed #114232;
+  padding: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.image-upload-label:hover .upload-preview {
+  border-color: #0d3326;
+}
+
+.add-form-fields {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  color: #114232;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #114232;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.add-btn {
+  background-color: #114232;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1.5rem;
+}
+
+.add-btn:hover {
+  background-color: #0d3326;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 }

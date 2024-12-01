@@ -2,51 +2,52 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 4%;
-  background-color: #649a7c;
-  color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1rem;
 }
 
-.navbar .logo {
-  width: max(10%, 80px);
+.logo {
+  height: 40px;
+  width: auto;
 }
 
-.navbar .admin-text {
+.admin-text {
   font-size: 1.2rem;
   font-weight: 600;
+  color: #114232;
 }
 
-.navbar .profile {
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile {
   width: 40px;
+  height: 40px;
   border-radius: 50%;
-  border: 2px solid #fff;
-  padding: 2px;
+  object-fit: cover;
+  border: 2px solid #114232;
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 750px) {
+.profile:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    padding: 1rem;
   }
 
-  .navbar-left {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .navbar .admin-text {
+  .admin-text {
     font-size: 1rem;
-  }
-
-  .navbar .profile {
-    margin-top: 10px;
   }
 }

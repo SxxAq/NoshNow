@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "./List.css";
+
 const List = () => {
-  const url = "http://localhost:4000";
+  const url = "https://noshnow-backend.onrender.com";
   const [list, setList] = useState([]);
+
   const fetchList = async () => {
     const response = await axios.get(`${url}/api/food/list`);
     if (response.data.success) {
@@ -13,6 +15,7 @@ const List = () => {
       toast.error("Error loading list.");
     }
   };
+
   const itemRemoveHandler = async (foodId) => {
     try {
       const response = await axios.post(`${url}/api/food/remove`, {
@@ -30,33 +33,40 @@ const List = () => {
       toast.error("Error removing food.");
     }
   };
+
   useEffect(() => {
     fetchList();
   }, []);
+
   return (
-    <div className="list add flex-col">
-      <p>All Foods List</p>
+    <div className="list add">
+      <h3 className="list-title">All Foods List</h3>
       <div className="list-table">
-        <div className="list-table-format title">
-          <b>Image</b>
-          <b>Name</b>
-          <b>Category</b>
-          <b>Price</b>
-          <b>Action</b>
+        <div className="list-table-header">
+          <span>Image</span>
+          <span>Name</span>
+          <span>Category</span>
+          <span>Price</span>
+          <span>Action</span>
         </div>
-        {list.map((item, index) => {
-          return (
-            <div key={index} className="list-table-format">
-              <img src={`${url}/images/` + item.image} alt="" />
-              <p>{item.name}</p>
-              <p>{item.category}</p>
-              <p>${item.price}</p>
-              <p onClick={() => itemRemoveHandler(item._id)} className="cross">
-                X
-              </p>
-            </div>
-          );
-        })}
+        {list.map((item, index) => (
+          <div key={index} className="list-table-row">
+            <img
+              src={`${url}/images/` + item.image}
+              alt={item.name}
+              className="food-image"
+            />
+            <p>{item.name}</p>
+            <p>{item.category}</p>
+            <p>${item.price}</p>
+            <button
+              onClick={() => itemRemoveHandler(item._id)}
+              className="remove-btn"
+            >
+              Remove
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
