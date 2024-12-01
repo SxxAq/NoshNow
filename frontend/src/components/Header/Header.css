@@ -1,87 +1,87 @@
 .header {
-    height: 34vw;
-    margin: 30px auto;
-    background: url('/header_3.png') no-repeat;
-    background-size: cover; 
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden; 
-  
-  }
-  
-  /* Adding an overlay for better text contrast */
-  .header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-  }
-  
-  .header-contents {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 1.5vw;
-    max-width: 50%;
-    bottom: 10%;
-    left: 6vw;
-    animation: FadeIn 3s;
-  }
-  
-  .header-contents h2 {
-    font-weight: 500;
-    color: #F7F9F2; 
-    font-size: max(4.5vw, 22px);
-  }
-  
-  .header-contents p {
-    color: #F7F9F2; 
-    font-size: 1vw;
-  }
-  
-  .header-contents button {
-    border: none;
-    color: #114232; 
-    font-weight: 500;
-    padding: 1vw 2.3vw;
-    background-color: #F7F9F2;
-    font-size: max(1vw, 13px);
-    border-radius: 50px;
-    cursor: pointer;
-  }
-  
-  .header-contents button:hover {
-    background-color: #114232;
-    color: #F7F9F2;
-    border: 2px solid #F7F9F2;
-  }
-  
-  @media (max-width: 900px) {
-    .header {
-        height: 50vw; /* Adjust height for smaller screens */
-    }
-
-    .header-contents {
-        max-width: 70%; /* Adjust max width */
-        bottom: 15%; /* Adjust position */
-        left: 5vw;
-        gap: 2vw;
-    }
-
-    .header-contents h2 {
-        font-size: max(6vw, 20px); /* Adjust font size */
-    }
-
-    .header-contents p {
-        font-size: 2vw; /* Adjust font size */
-    }
-
-    .header-contents button {
-        padding: 1.5vw 3vw; /* Adjust padding */
-        font-size: max(2vw, 12px); /* Adjust font size */
-    }
+  height: 34vw;
+  margin: 30px auto;
+  background: url("/header_3.png") no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
 }
+
+/* Adding an overlay for better text contrast */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: FadeIn 3s;
+}
+
+.header-contents h2 {
+  font-weight: 500;
+  color: #f7f9f2;
+  font-size: max(4.5vw, 22px);
+}
+
+.header-contents p {
+  color: #f7f9f2;
+  font-size: 1vw;
+}
+
+.header-contents button {
+  border: none;
+  color: #114232;
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  background-color: #f7f9f2;
+  font-size: max(1vw, 13px);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.header-contents button:hover {
+  background-color: #114232;
+  color: #f7f9f2;
+  border: 2px solid #f7f9f2;
+}
+
+@media (max-width: 900px) {
+  .header {
+    height: 50vw; /* Adjust height for smaller screens */
+  }
+
+  .header-contents {
+    max-width: 70%; /* Adjust max width */
+    bottom: 15%; /* Adjust position */
+    left: 5vw;
+    gap: 2vw;
+  }
+
+  .header-contents h2 {
+    font-size: max(6vw, 20px); /* Adjust font size */
+  }
+
+  .header-contents p {
+    font-size: 2vw; /* Adjust font size */
+  }
+
+  .header-contents button {
+    padding: 1.5vw 3vw; /* Adjust padding */
+    font-size: max(2vw, 12px); /* Adjust font size */
+  }
+}
+

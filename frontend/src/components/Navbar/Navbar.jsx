@@ -27,7 +27,7 @@ const Navbar = ({ setShowLogin }) => {
   };
 
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div className="hamburger" onClick={toggleMenu}>
         <span></span>
         <span></span>
@@ -72,7 +72,7 @@ const Navbar = ({ setShowLogin }) => {
           </a>
           {!token && (
             <li
-              className="sign-in"
+              className="sign-in-button"
               onClick={() => {
                 setShowLogin(true);
                 setIsMenuOpen(false);
@@ -104,7 +104,7 @@ const Navbar = ({ setShowLogin }) => {
                 <p>Orders</p>
               </li>
               <hr />
-              <li onClick={onLogout}>
+              <li className="logout-button" onClick={onLogout}>
                 <img src={assets.logout_icon} alt="Logout" />
                 <p>LogOut</p>
               </li>
@@ -112,7 +112,7 @@ const Navbar = ({ setShowLogin }) => {
           </div>
         )}
       </div>
-    </div>
+    </nav>
   );
 };
 

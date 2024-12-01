@@ -3,6 +3,41 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  width: 100px;
+  margin-top: 5px;
+}
+.navbar .logo:hover {
+  transform: scale(1.05);
+}
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  color: #49557e;
+  font-size: 18px;
+}
+
+.navbar-menu ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+}
+/* Navbar.css */
+.navbar {
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #f8f9fa;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -35,7 +70,9 @@
 
 .navbar-menu li {
   cursor: pointer;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  transition:
+    color 0.3s ease,
+    border-bottom 0.3s ease;
 }
 
 .navbar-menu li:hover,
@@ -60,9 +97,10 @@
   transform: scale(1.1);
 }
 
-.navbar button {
-  background: #165741;
+.navbar .sign-in-button {
+  background: linear-gradient(135deg, #165741 0%, #039b53 100%);
   font-size: 16px;
+  font-weight: 500;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -70,6 +108,16 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+/*.navbar .logout-button {*/
+/*  background: #ff2929;*/
+/*  font-size: 16px;*/
+/*  color: #fff;*/
+/*  padding: 10px 20px;*/
+/*  border: none;*/
+/*  border-radius: 5px;*/
+/*  cursor: pointer;*/
+/*  transition: background-color 0.3s ease;*/
+/*}*/
 
 .navbar button:hover {
   background-color: #039b53;
@@ -104,7 +152,9 @@
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   list-style: none;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
   opacity: 0;
   visibility: hidden;
   z-index: 3;
@@ -139,9 +189,10 @@
 @media (max-width: 900px) {
   .navbar {
     width: auto;
-   justify-content: space-between;
-   padding: 5px 20px;
+    justify-content: space-between;
+    padding: 5px 20px;
   }
+
   .navbar-menu {
     display: none;
   }
@@ -154,12 +205,12 @@
     right: 0;
     background-color: #f8f9fa;
     padding: 20px;
-    /* border-radius: 15px; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
 
   .navbar-menu.open ul {
     flex-direction: column;
+    align-items: start;
     gap: 20px;
   }
 
@@ -173,7 +224,6 @@
 
   .navbar .cart {
     order: 1;
-    
   }
 }
 
