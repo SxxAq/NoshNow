@@ -1,22 +1,54 @@
 .food-display {
-  margin-top: 30px;
-  padding: 20px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  border-radius: 8px; 
-  background-color: #fff; 
+  margin-top: 40px;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
-.food-display h2 {
-  font-size: max(2vw, 24px);
-  font-weight: 600;
+
+.food-display-header {
   text-align: center;
-  color: #61677A;
+  margin-bottom: 40px;
 }
+
+.food-display-header h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-family: "Playfair Display", serif;
+}
+
+.food-display-header p {
+  font-size: 16px;
+  color: #7f8c8d;
+  font-family: "Lato", sans-serif;
+}
+
 .food-display-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  margin-top: 30px;
-  margin-bottom: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 30px;
-  row-gap: 50px;
-  
+  justify-content: center;
 }
+
+.no-items-message {
+  text-align: center;
+  font-size: 18px;
+  color: #7f8c8d;
+  margin-top: 40px;
+  font-family: "Lato", sans-serif;
+}
+
+@media (max-width: 768px) {
+  .food-display {
+    padding: 30px 15px;
+  }
+
+  .food-display-list {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap");
